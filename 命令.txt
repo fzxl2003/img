@@ -1,0 +1,79 @@
+su 切换root账户
+conda
+conda activate pytorch18 切换虚拟环境
+sudo service xrdp restart 打开远程桌面
+wsl --shutdown 关闭wsl
+sudo dpkg -i deb文件名   
+pip3 install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+
+su  进入管理员模式
+sudo passwd root  初始化管理员密码
+
+sudo docker exec -it alist /bin/sh  进入alist环境
+
+/home/fzxl2003/aria2.sh
+ ssh  fzxl2003@linux.pansis.club
+
+http://linux.pansis.club:5244/   alist
+http://linux.pansis.club:16880/   ariang
+http://linux.pansis.club:8088/    docker-gui
+http://172.17.0.4:6800/jsonrpc    Password
+
+pm2 resurrect   oj系统启动
+
+安装宝塔
+wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh ed8484bec
+
+
+docker run -d \
+--name aria2 \
+--restart unless-stopped \
+--log-opt max-size=1m \
+-e PUID=$UID \
+-e PGID=$GID \
+-e UMASK_SET=022 \
+-e RPC_SECRET=prc_password \
+-e RPC_PORT=6800 \
+-e LISTEN_PORT=6888 \
+-p 16800:6800 \
+-p 16888:6888 \
+-p 16888:6888/udp \
+-v /home/fzxl2003/aria2/config:/home/fzxl2003/aria2/ \
+-v /home/fzxl2003/downloads:/home/fzxl2003/downloads \
+p3terx/aria2-pro
+-----------------------------------
+©著作权归作者所有：来自51CTO博客作者qq596dce2ad8797的原创作品，请联系作者获取转载授权，否则将追究法律责任
+手把手教你 使用Docker搭建aria2+AriaNg，打造自己的离线下载服务器
+https://blog.51cto.com/u_13144124/5425772
+
+
+
+
+
+
+
+conda基本操作
+查看版本号 ：conda --version
+查看所有包 : conda list
+安装模块包 ：conda install package
+卸载模块包 ：conda uninstall package
+升级所有包 : conda upgrade --all
+conda create -n my_numpy --clone numpy
+# 创建一个新的环境my_numpy，由numpy复制而来
+虚拟环境
+创建虚拟环境：conda create -n EnvName python=3.7（版本号）
+切换虚拟环境：activate EnvName
+查看虚拟环境：conda env list
+退出虚拟环境：deactivate
+删除虚拟环境：conda remove -n EnvName --all
+
+导入和导出
+导入：conda EnvName export > environment.yaml
+导出：conda EnvName create -f environment.yaml
+
+作者：万万二号
+链接：https://www.jianshu.com/p/c4b5b4c07f7c
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
